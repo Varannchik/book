@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  h2 Book
+    form(action='/api/book' method='post')
+      input(type='text' name='title' id='title' placeholder='title book')     
+      input(type="submit" value="Send")
+  
+  h2 Author
+    form(action='/api/author' method='post')
+      input(type='text' name='fullname' id='fulname' placeholder='fullname author')     
+      input(type="submit" value="Send")
+
+  h2 Book and Author
+    form(action='/api/library' method='post')
+      input(type='text' name='title' id='title' placeholder='title book')
+      input(type='text' name='fullname' id='fulname' placeholder='fullname author')     
+      input(type="submit" value="Send")
+  
+  form(action='/api/allbooks' method='post')
+    input(type="submit" value="Show books")
+  form(action='/api/allauth' method='post')
+    input(type="submit" value="Show authors")
